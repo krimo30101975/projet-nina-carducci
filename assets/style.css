@@ -4,8 +4,11 @@ body {
 	margin: auto;
 }
 * {
+	box-sizing: border-box;
 	font-family: 'Inter';
 	font-style: normal;
+	margin: 0;
+	padding: 0;
 } 
 
 h1 {
@@ -14,10 +17,15 @@ h1 {
 
 h2 {
 	font-size: 30px;
+	margin: 0;
 }
 
 h3 {
 	font-size: 27.412px;
+}
+
+p {
+	margin: 0;
 }
 
 .top-header {
@@ -256,25 +264,40 @@ input[type="submit"] {
 footer {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	gap: 30px;
 	width: 100%;
 	height: auto;
 	padding: 40px 30px;
 	background-color: #D8D3A8;
 }
 
-address {
+h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 800px;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	padding: 30px 30px;
+	border: solid 2px #BEB45A;
+	background-color: #D8D3A8;
+}
+
+.infos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
 	height: auto;
 	padding: 30px 30px;
 	margin: 0;
 	font-family: 'Spectral';
 	font-weight: 500;
-	font-size: 22px;
-	background-color: #BEB45A
+	font-size: 18px;
+	background-color: #BEB45A;
 }
 
 @media all and (max-width: 1180px) {
