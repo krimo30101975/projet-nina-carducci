@@ -214,7 +214,6 @@ p {
 }
 
 .picture.left {
-	flex: 1;
 	margin: 0 20px;
 	z-index: 0;
 	font-family: "Inter";
@@ -314,6 +313,12 @@ p {
 	height: 100%;
 	padding: .2em;
 	object-fit: cover; /* Recadre l'image sans déformation */
+	filter: brightness(100%); /* assombrit l’image */
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+.gallery img.item:hover {
+	transform: scale(1.20);
+	filter: brightness(80%);
 }
 
 .quote {
@@ -652,17 +657,25 @@ footer h2 {
 	  bottom: 1rem;
 	}
 
-	/* SECTION ABOUT */
-	
-		.picture.left::before {
-			width: 100%;
-			height: 18%;
-			position: absolute;
-			bottom: auto;
-			top: 0;
-			left: 0;
-			z-index: -1;
-		}
+/* SECTION ABOUT */
+
+	.picture.left::before {
+		width: 100%;
+		height: 18%;
+		position: absolute;
+		bottom: auto;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	.picture.left {
+		display: flex;
+		justify-content: center;
+		margin: 0 20px;
+		z-index: 0;
+		font-family: "Inter";
+	}
 
 /* SECTION GALLERY */
 
@@ -678,6 +691,7 @@ footer h2 {
 	.filters {
 		justify-content: space-between;
 		gap: 2px;
+		max-width: 500px;
 		width: 100%;
 		padding: 0px 5px;
 		margin-top: 0;
@@ -687,9 +701,9 @@ footer h2 {
 		padding: 5px 5px;
 		font-size: 14px;
 	}
+
 	.gallery {
-		width: 100%;
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 5px;
 	}
 
@@ -750,5 +764,10 @@ footer h2 {
 	footer h2 {
 		padding: 0px 20px;
 	}
+}
+
+/***************************  @MEDIA 658  *******************************/
+
+@media (max-width: 658px) {
 }
 
