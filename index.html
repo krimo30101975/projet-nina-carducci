@@ -6,7 +6,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-		<script type="application/ld+json" defer>
+		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "LocalBusiness",
@@ -62,45 +62,24 @@
 				<!-- Conteneur principal du carrousel -->
 				<div class="carousel-container">
 					<!-- Flèche gauche -->
-        			<button class="carousel-arrow left-arrow"><img src="./assets/images/arrow_left_20.png" alt="chevron gauche"></i></button>
+        			<button class="carousel-arrow left-arrow"><img src="./assets/images/arrow_left_20.png" alt="chevron gauche"></button>
 			
 					<!-- Conteneur des images et des commentaires -->
 					<div class="carousel-track">
 						<picture class="carousel-slide">
-							<source
-								srcset="
-									./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_640.webp 640w,
-									./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_800.webp 800w,
-									./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_1024.webp 1024w,
-									./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img alt="image d'un homme en costume qui traverse un passage piéton">
+							<source media="(max-width: 768px)" srcset="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_640.webp" >
+							<source media="(min-width: 769px)" srcset="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_1024.webp" >
+							<img src="./assets/images/slider/ryoji-iwata-wUZjnOv7t0g-unsplash_1024.webp" alt="image d'un homme en costume qui traverse un passage piéton" >
 						</picture>
 						<picture class="carousel-slide">
-							<source 
-								srcset="
-								./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_640.webp 640w,
-								./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_800.webp 800w,
-								./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_1024.webp 1024w,
-								./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img alt="image de spéctateurs en concert" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_1024.webp" >
+							<img src="./assets/images/slider/nicholas-green-nPz8akkUmDI-unsplash_1024.webp" alt="image de spéctateurs en concert" loading="lazy">
 						</picture>
 						<picture class="carousel-slide">
-							<source 
-								srcset="
-									./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_640.webp 640w,
-									./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_800.webp 800w,
-									./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_1024.webp 1024w,
-									./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img alt="image de mariés qui s'embrassent" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_1024.webp" >
+							<img src="./assets/images/slider/edward-cisneros-3_h6-1NPDGw-unsplash_1024.webp" alt="image de mariés qui s'embrassent" loading="lazy" >
 						</picture>
 					</div>
 
@@ -141,112 +120,49 @@
 				  
 					<div class="gallery">
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_640.webp 640w,
-								./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_800.webp 800w,
-								./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_1024.webp 1024w,
-								./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="concert aaron paul" data-category="concert" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_800.webp" >
+							<img src="./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash_800.webp"  class="item" alt="concert aaron paul" data-category="concert" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_640.webp 640w,
-								./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_800.webp 800w,
-								./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_1024.webp 1024w,
-								./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="homme en costard" data-category="entreprises" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_800.webp" >
+							<img src="./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash_800.webp" class="item" alt="homme en costard" data-category="entreprises" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_640.webp 640w,
-								./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_800.webp 800w,
-								./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_1024.webp 1024w,
-								./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="reunion entreprise" data-category="entreprises" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_800.webp" >
+							<img src="./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash_800.webp" class="item" alt="reunion entreprise" data-category="entreprises" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_640.webp 640w,
-								./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_800.webp 800w,
-								./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_1024.webp 1024w,
-								./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="mariage" data-category="mariages" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_800.webp" >
+							<img src="./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash_800.webp" class="item" alt="mariage" data-category="mariages" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_640.webp 640w,
-								./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_800.webp 800w,
-								./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_1024.webp 1024w,
-								./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="portrait homme afro" data-category="portrait" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_800.webp" >
+							<img src="./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash_800.webp" class="item" alt="portrait homme afro" data-category="portrait" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_640.webp 640w,
-								./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_800.webp 800w,
-								./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_1024.webp 1024w,
-								./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="couple de mariés" data-category="mariages" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_800.webp" >
+							<img src="./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash_800.webp" class="item" alt="couple de mariés" data-category="mariages" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_640.webp 640w,
-								./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_800.webp 800w,
-								./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_1024.webp 1024w,
-								./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="portrait femme a linette" data-category="portrait" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_800.webp" >
+							<img src="./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash_800.webp" class="item" alt="portrait femme a linette" data-category="portrait" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_640.webp 640w,
-								./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_800.webp 800w,
-								./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_1024.webp 1024w,
-								./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="chanteur en plein concert" data-category="concert" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_800.webp" >
+							<img src="./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash_800.webp" class="item" alt="chanteur en plein concert" data-category="concert" loading="lazy">
 						</picture>
 						<picture>
-							<source 
-								srcset="
-								./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_640.webp 640w,
-								./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_800.webp 800w,
-								./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_1024.webp 1024w,
-								./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_1920.webp 1920w
-								"
-								sizes="(max-width: 640px) 100vw, (max-width: 800px) 100vw, (max-width: 1024px) 100vw, 1920px"
-							>
-							<img class="item" alt="femme avec un pc" data-category="entreprises" loading="lazy">
+							<source media="(max-width: 799px)" srcset="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_640.webp" >
+							<source media="(min-width: 800px)" srcset="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_800.webp" >
+							<img src="./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash_800.webp" class="item" alt="femme avec un pc" data-category="entreprises" loading="lazy">
 						</picture>
 					</div>
 				</div>
@@ -308,28 +224,34 @@
 					<div class="form-container">
 						<h2>Une question ? Une demande de devis ?</h2>
 						<p> N’hésitez pas à m’écrire ! Je vous répondrais en moins de 24 heures</p>
-						<form action="" method="post">
+						
+						<!--  action="."  envoyer le formulaire à la même page (cas courant), "submit.php" vers un fichier submit.php, "/upload-image" avec un backend (par exemple Flask, Node.js, etc.) mettre l’URL de la route backend, par exemple -->
+						<form action="." method="post">	
 							<label for="nom">Nom</label>
 							<input type="text" name="nom" id="nom" autocomplete="on">
 							<label for="email">Email</label>
 							<input type="email" name="email" id="email" autocomplete="on">
 							<label for="message">Message</label>
 							<textarea name="message" id="message" cols="30" rows="10"></textarea>
-							<input type="submit" value="Envoyer"/>
+							<input type="submit" value="Envoyer">
 						</form>
 					</div>
 					<div class="picture right">
-						<img src="./assets/images/camera.webp" alt="image appareil photo">
+						<img src="./assets/images/camera.webp" alt="appareil photo">
 					</div>
 				</div>
 			</section>
 		</main>
-		<footer>
+		<footer itemscope itemtype="https://schema.org/Person">
 			<h2 itemprop="name">Nina Carducci, photographe</h2>
 			<div class="infos">
 				<div class="location" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
 					<p itemprop="streetAddress">68 avenue Alsace-Lorraine</p>
-					<span itemprop="postalCode">33200<span> </span><span itemprop="addressLocality">Bordeaux</span></span>
+					<span>
+						<span itemprop="postalCode">33200</span>
+						<span> </span>
+						<span itemprop="addressLocality">Bordeaux</span>
+					</span>
 				</div>
 				<div class="phone">
 					<p itemprop="openingHours" content="Mo-Fr 10:00-19:00">Disponible du lundi au vendredi</p>
