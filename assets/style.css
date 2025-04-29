@@ -1,10 +1,15 @@
+/***************************  GENERAL  *******************************/
+
 body {
 	box-sizing: border-box;
 	max-width: 1920px;
 	margin: auto;
 }
-* {
-	box-sizing: border-box;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 	font-family: 'Inter';
 	font-style: normal;
 	margin: 0;
@@ -39,7 +44,9 @@ p {
 	margin: 0 0 16px;
 }
 
-.top-header {
+/***************************  NAVBAR  *******************************/
+
+.navbar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -47,40 +54,145 @@ p {
 	position: sticky;
 	top:0;
 	z-index: 1000;
-	padding-inline: 100px;
-	padding-block: 30px;
+	padding: 30px 100px;
 }
 
 .nav ul {
 	display: flex;
-	align-items: center;
 	list-style-type: none;
 	font-size: 14px;
 	padding: 0 0 0 32px;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 .nav li {
-	padding-inline: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
 }
 
 .nav a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-decoration: none;
 	color: #000;
 }
 
 .social-link img {
 	width: 20px;
+	height: 20px;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+/***************************  CAROUSEL  *******************************/
+
+/* Carousel container */
+.carousel-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height: auto; /* Fixe la hauteur du carousel */
+	box-sizing: border-box;
+  }
+  
+  /* Piste de défilement */
+  .carousel-track {
+	display: flex;
+	transition: transform 0.5s ease-in-out;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+  }
+  
+  /* Chaque slide */
+  .carousel-slide {
+	position: relative;
+	min-width: 100%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden; /* cache le débordement de l'image pendant le zoom */
+	box-sizing: border-box;
+  }
+  
+  /* Image de la slide */
+  .carousel-slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+	max-width: 100%;
+	max-height: 100%;
+  }
+  
+  /* Effet zoom au survol */
+  .carousel-slide:hover img {
+	transform: scale(1.05);
+  }
+  
+  .carousel-slide span {
+	  display: block;
+	  font-weight: 400;
+	  font-size: 30px;
+  }
+  
+/* Flèches */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.left-arrow {
+    left: 75px;
+}
+
+.right-arrow {
+    right: 75px;
+}
+
+.carousel-arrow img {
+	width: 18px;
+	height: 30px;
+    opacity: 0.6;
+    transition: opacity 0.5s, color 0.5s;
+}
+
+.carousel-arrow:hover img {
+    opacity: 1;
+}
+ 
+  /* Dots */
+  .carousel-dots {
+	position: absolute;
+	bottom: 1.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+  }
+  
+  .carousel-dots .dot {
+	margin-inline: 5px;
+	width: 30px;
+	height: 3px;
+	background-color: #ffffff80;
 	cursor: pointer;
-}
+  }
+  
+  .carousel-dots .dot.active {
+	background-color: #fff;
+	opacity: 1;
+  }
 
-.visually-hidden {
-	color: #595959;
-}
+/***************************  ABOUT  *******************************/
 
 #about {
 	display: flex;
@@ -101,6 +213,11 @@ p {
 	z-index: -1;
 }
 
+.picture.left::before {
+	width: 374px;
+	height: 329px;
+}
+
 .picture {
 	flex: 1;
 	margin: 0 20px;
@@ -110,16 +227,18 @@ p {
 
 .picture img {
 	width: 100%;
-
 }
+
 #about-me {
 	flex: 2;
 }
+
 .about-me__title {
 	font-size: 30px;
 	margin-top: 1em;
 	margin-bottom: 60px;
 }
+
 #about-me .about-me__introduction {
 	font-family: 'Spectral';
 	font-size: 16px;
@@ -129,11 +248,14 @@ p {
 	margin: 0 0 8px;
 	line-height: 1.2em;
 }
+
 #about-me p {
 	width: 80%;
 	font-size: 14px;
 	line-height: 1.5em;
 }
+
+/***************************  GALLERY  *******************************/
 
 #gallery {
 	display: flex;
@@ -146,58 +268,55 @@ p {
 	padding: 53.588px 0;
 	margin: 0 0 8px;
 }
-.gallery .nav {
-	justify-content: center;
-}
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
-	background-color: #17505E;
-	border-radius:0 ;
-}
-.nav-pills .nav-link {
-	color: #000;
-	cursor: pointer;
-}
 
-.container.py-3 {
-	margin: 0 12px;
+.gallery_container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
 	padding: 16px 12px;
+	margin: 0 26px;
 }
 
-.my-4.tags-bar.nav.nav-pills {
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+	gap: 10px;
 	margin: 24px 0;
 }
-
-.item-column {
-	position: relative;
-	margin-bottom: 0 !important;
-	padding: 0;
+.filter-btn {
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: #fff;
 }
-.item-column::after{
-	content: "";
-	display: block;
-	padding-bottom: 100%;
-
+.filter-btn.active,
+.filter-btn:hover {
+	background-color: #5B5824;
+	color: white;
 }
-.gallery-item {
-	position: absolute;
+
+.gallery {
+	max-width: 1200px;
+	width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.gallery picture {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+	aspect-ratio: 4/4;
+}
+.gallery img.item {
+    display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	padding: .5em;
-}
-.mg-prev, .mg-next {
-	width: 30px;
-	height: 30px;
-	border-radius: 00%;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-	font-size: 24px;
-}
-
-figure {
-	margin: 0 0 16px;
+	padding: .2em;
+	object-fit: cover; /* Recadre l'image sans déformation */
 }
 
 .quote {
@@ -212,7 +331,6 @@ figure {
 	font-style: italic;
 	font-weight: 300;
 	font-size: 38.935px;
-	
 }
 .quote__author {
 	font-family: 'Spectral';
@@ -220,10 +338,19 @@ figure {
 	font-size: 22px;
 }
 
+
+/***************************  SERVICE  *******************************/
+
+
 #services {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
 	margin: auto;
 	background-color: #A8D5D8;
 	position: relative;
+	width: 100%;
 }
 #services .container::before{
 	content: ' ';
@@ -237,8 +364,10 @@ figure {
 }
 
 #services .container {
-	justify-content: space-between;
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 	padding : 2em 0;
 
 }
@@ -258,6 +387,10 @@ figure {
 	justify-content: space-between;
 	z-index: 1;
 }
+
+
+/***************************  CONTACT  *******************************/
+
 
 #contact {
 	margin: auto;
@@ -282,6 +415,11 @@ figure {
 	z-index: -1;
 }
 
+.picture.right .img {
+	width: 374px;
+	height: 329px;
+}
+
 .form-container {
 	display: flex;
 	justify-content: center;
@@ -295,6 +433,7 @@ figure {
 .form-container p{
 	margin: 0;
 }
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -319,6 +458,7 @@ form textarea {
 	font-size: 1.2em;
 	margin-bottom: 20px;
 }
+
 input[type="submit"] {
 	background-color: #BEB45A;
 	padding: .5em 1em
@@ -337,6 +477,8 @@ textarea {
 textarea {
   resize: vertical;
 }
+
+/***************************  FOOTER  *******************************/
 
 footer {
 	display: flex;
@@ -364,6 +506,7 @@ footer h2 {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	gap: 16px;
 	width: 100%;
 	height: auto;
 	padding: 30px 30px;
@@ -374,59 +517,205 @@ footer h2 {
 	background-color: #BEB45A;
 }
 
-@media all and (max-width: 1180px) {
-	.picture {
-		flex : 2;
-	}
-	#about, #contact .container {
-		align-items: center;
-	}
-	.about-me__title {
-		margin-top: 0;
-		margin-bottom: 1em;
-	}
-	#about-me .about-me__introduction,
-	#about-me h6, #about-me p {
-		width: 100%;
-	}
-}
+/***************************  @MEDIA 1000  *******************************/
 
-@media all and (max-width: 1000px) {
-	.top-header .nav, .top-header .nav ul {
-		padding: 0 0 0 0;
-	}
-	.top-header{
-		padding: 30px 30px;
-	}
+@media (max-width: 1000px) {
+
+/* SECTION ABOUT */
+
 	#about{
 		flex-direction: column;
+		align-items: center;
 
 	}
-	.picture {
-		width: 50%;
+
+	.about-me__title {
+		text-align: center;
+		font-size: 30px;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
+
+	#about-me p,
+	#about-me .about-me__introduction {
+		width: 100%;
+		margin: 0 0 8px;
+	}
+
 	.picture.left::before {
 		width: 100%;
-		height: 30%;
+		height: 40%;
 		position: absolute;
 		bottom: auto;
 		top: 0;
 		left: 0;
 		z-index: -1;
 	}
-	.about-me__title{
-		text-align: center;
-		margin-top: 1em;
+
+/* SECTION CONTACT FORM */
+	
+	#contact {
+		padding: 48px 100px;
 	}
+
+	#contact .container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.form-container {
+		max-width: 516px;
+	}
+
+	form {
+		width: 100%;
+	}
+
+	#contact .picture.right {
+		margin-top: 1em;
+		max-width: 388px;
+		height: auto;
+	}
+	.picture.right::before {
+		width: 100%;
+		height: 26%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
+}
+
+/***************************  @MEDIA 768  *******************************/
+
+@media (max-width: 768px) {
+
+/* SECTION GENERAL */
+
+	#about, #contact {
+		padding-inline: 2em;
+		padding-block: 2em;
+	}
+
+	.picture {
+		width: 80%;
+	}
+
+	.picture.left::before, .picture.right::before {
+		height: 150px;
+	}
+
+/* SECTION NAVBAR */
+
+	.navbar {
+		flex-direction: column;
+		padding-inline: 0;
+	}
+
+	.nav  {
+		justify-content: space-between;
+		width: 100%;
+		padding-top: 15px;
+	}
+
+	.navbar .nav ul  {
+		padding: 0 0 0 20px;
+	}
+
+	.navbar .nav ul li {
+		flex: 1;
+		padding: 0px;
+		text-align: center;
+	}
+
+/* SECTION CAROUSEL */
+
+	.carousel-container {
+	  height: 150px;
+	}
+
+	.left-arrow {
+		left: 20px;
+	}
+
+	.right-arrow {
+		right: 20px;
+	}
+ 
+	/* Dots */
+	.carousel-dots {
+	  bottom: 1rem;
+	}
+
+	/* SECTION ABOUT */
+	
+		.picture.left::before {
+			width: 100%;
+			height: 18%;
+			position: absolute;
+			bottom: auto;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+
+/* SECTION GALLERY */
+
+	#gallery .title{
+		padding: 30px 0;
+		margin: 0;
+	}
+
+	.gallery_container {
+		padding: 0px 5px 5px 5px;
+	}
+
+	.filters {
+		justify-content: space-between;
+		gap: 2px;
+		width: 100%;
+		padding: 0px 5px;
+		margin-top: 0;
+	}
+
+	.filter-btn {
+		padding: 5px 5px;
+		font-size: 14px;
+	}
+	.gallery {
+		width: 100%;
+		grid-template-columns: 1fr;
+		gap: 5px;
+	}
+
+	.quote {
+		width: 90%;
+		margin: auto;
+		padding-block: 30px;
+	}
+
+	.quote__text {
+		font-size: 25px;
+	}
+
+/* SECTION SERVICE */
+
 	#services .container {
 		flex-direction: column;
+		padding : 0 0 2em 0;
+	}
+
+	#services .title {
+		margin: 0;
+		padding: 30px 0 0 0;
 	}
 	.service {
 		width: 100%;
-		max-width: 100%;
+		max-width: 90%;
 		height: auto;
 		margin: 2em 0
 	}
+
 	.service__description{
 		margin-bottom: 1em;
 	}
@@ -440,69 +729,21 @@ footer h2 {
 		z-index: 0;
 	}
 
-	#contact .container {
-		flex-direction: column;
-		align-items: center;
-	}
+/* SECTION CONTACT FORM */
 
-	.form-container {
-		max-width: 516px;
-	}
-	#contact .picture.right {
-		margin-top: 1em;
-		max-width: 388px;
-		height: auto;
-	}
 	.picture.right::before {
 		width: 100%;
-		height: 30%;
+		height: 19%;
 		position: absolute;
 		bottom: 0;
 		right: 0;
 		z-index: -1;
 	}
-}
 
-@media all and (max-width: 650px) {
-	.top-header {
-		flex-direction: column;
-		padding-inline: 0;
-	}
-	.top-header .nav, .top-header .nav ul {
-		width: 100%;
-		justify-content: space-between;
-	}
-	.top-header .nav ul li {
-		flex: 1;
-		padding: 0em;
-		text-align: center;
-	}
-	.gallery ul {
-		flex-direction: column;
-		text-align: center;
-	}
-	.gallery ul .nav-item{
-		padding: 0;
-		border-bottom: solid 1px #BEB45A;
-	}
-	.picture.left::before, .picture.right::before {
-		height: 150px;
-	}
-	#services .container {
-		align-items: center;
-	}
-	.service {
-		max-width: 90%;
-	}
-	#about, #contact {
-		padding-inline: 2em;
-		padding-block: 2em;
-	}
-	form {
-		width: 100%;
-	}
-	.picture {
-		width: 80%;
+/* SECTION FOOTER */
+
+	footer h2 {
+		padding: 0px 20px;
 	}
 }
 
